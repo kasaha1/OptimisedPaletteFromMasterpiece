@@ -19,6 +19,13 @@ shinyServer(function(input, output) {
   DoPrediction <- observeEvent(input$doExtration, {
     output$graphExample <- renderPlot(NA)
     
+    b64 <- base64enc::dataURI(file = uploadedImage(), mime = "image/png")
+    insertUI(
+      selector = "#image-container",
+      where = "afterBegin",
+      ui = img(src = b64, width = 200, height = 200)
+    )
+    
     NumColor <- input$NumOfColor
     
     MTcars <- mtcars[1:NumColor, ]

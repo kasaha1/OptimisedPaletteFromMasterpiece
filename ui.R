@@ -30,7 +30,10 @@ shinyUI(fluidPage(
         inputId = "doExtration",
         label = "Extraction",
         class = "btn-primary"
-      ),
+      ),br(),
+      br(),
+      div(id = "image-container", style = "display:flexbox"),
+      
       HTML("<p> &nbsp;</p><p> This website was created to make it simple to utilize"), tags$a(href = "https://github.com/AndreaCirilloAC/paletter",   "AndreaCirilloAC's paletteR R package"), HTML(".</br>Only for educational purposes.</br>")
       
     ),
